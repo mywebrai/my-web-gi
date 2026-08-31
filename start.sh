@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 export PORT=${PORT:-3000}
 
-# اجرای 3x-ui در پس‌زمینه
+# اجرای 3x-ui در پس‌زمینه (خودش Xray رو اجرا می‌کنه)
 /usr/local/x-ui/x-ui > /var/log/x-ui.log 2>&1 &
 
 # تنظیم پورت در nginx
