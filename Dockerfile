@@ -18,7 +18,4 @@ COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-RUN mkdir -p /usr/share/nginx/html/view
-COPY sub-view.html /usr/share/nginx/html/view/index.html
-
 CMD ["/start.sh"]
