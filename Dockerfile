@@ -1,13 +1,7 @@
 FROM ghcr.io/mhsanaei/3x-ui:latest
 
-# نصب nginx با استفاده از apk (چون ایمیج Alpine هست)
-RUN apk add --no-cache nginx gettext
+# پورت پیش‌فرض 3x-ui (که می‌توانید تغییر دهید)
+EXPOSE 443
 
-# کپی کانفیگ nginx
-COPY nginx.conf.template /etc/nginx/nginx.conf.template
-
-# کپی اسکریپت استارت
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
-CMD ["/start.sh"]
+# اجرای مستقیم 3x-ui بدون Nginx
+CMD ["/usr/local/x-ui/x-ui"]
